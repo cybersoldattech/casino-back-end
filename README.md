@@ -1,7 +1,10 @@
-### Casino Backend
+# Brand Backend
+
 ## clone the application
+```bash
 git clone https://github.com/cybersoldattech/casino-back-end.git
 cd casino-back-end
+```
 
 ### PHP Packages
 ```bash
@@ -35,6 +38,7 @@ cd casino-back-end
 ```bash
     php artisan storage:link
 ```
+## Start  application
 
 ```bash
     php artisan serve
@@ -42,32 +46,32 @@ cd casino-back-end
 
 ### The API will be accessible at: http://localhost:8000/api . where 8000 is the application startup port
 
-##### for GET all brands
+##### For GET all brands
 ```bash
       http://localhost:8000/api/brands 
 ```
 
-##### for POST add brands
+##### For POST add brands
 ```bash
       http://localhost:8000/api/brands 
 ```
 
-##### for PUT add brands where id represents the brand identifier
+##### For PUT add brands where id represents the brand identifier
 ```bash
       http://localhost:8000/api/brands/id 
 ```
 
-##### for DELETE add brands where id represents the brand identifier
+##### For DELETE add brands where id represents the brand identifier
 ```bash
       http://localhost:8000/api/brands/id 
 ```
 
 
-### admin interface will be accessible at: http://localhost:8000/admin . where 8000 is the application startup port
+### Admin interface will be accessible at: http://localhost:8000/admin . where 8000 is the application startup port
 
-##### the brand table
+##### The brand table
 ```bash
-      http://localhost:8000/admin/brands/ 
+      http://localhost:8000/admin/brands
 ```
 
 ##### Interface to create the brand
