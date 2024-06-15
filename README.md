@@ -1,8 +1,7 @@
 ### Casino Backend
 ## clone the application
-git clone https://github.com/
-
-cd casino-backend
+git clone https://github.com/cybersoldattech/casino-back-end.git
+cd casino-back-end
 
 ### PHP Packages
 ```bash
