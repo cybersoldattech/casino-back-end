@@ -31,6 +31,11 @@ cd casino-backend
 ```bash
     php artisan migrate:fresh --seed
 ```
+## Create the symbolic link
+
+```bash
+    php artisan storage:link
+```
 
 ```bash
     php artisan serve
