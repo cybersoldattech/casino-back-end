@@ -2,7 +2,7 @@
 
 ## clone the application
 ```bash
-git clone https://github.com/cybersoldattech/casino-back-end.git
+[git clone https://github.com/cybersoldattech/casino-back-end.git](https://github.com/cybersoldattech/brands-back-end)
 cd casino-back-end
 ```
 
