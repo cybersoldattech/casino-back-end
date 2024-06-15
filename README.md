@@ -3,7 +3,7 @@
 ## clone the application
 ```bash
 git clone https://github.com/cybersoldattech/brands-back-end.git
-cd casino-back-end
+cd brands-back-end
 ```
 
 ### PHP Packages
