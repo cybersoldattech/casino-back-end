@@ -46,6 +46,11 @@ cd brands-back-end
 
 ### The API will be accessible at: http://localhost:8000/api . where 8000 is the application startup port
 
+```bash
+Default user 
+    admin@casino.com:password
+```
+
 ##### For GET all brands
 ```bash
       http://localhost:8000/api/brands 
