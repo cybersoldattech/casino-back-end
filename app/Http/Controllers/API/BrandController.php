@@ -19,7 +19,8 @@ class BrandController extends Controller
             $cfCountryHeader = $request->header('CF-IPCountry');
             return $cfCountryHeader ?: 'Unknown';
         });
-        $brands = Brand::orderBy('rating', 'desc')->get();
+        $brands = ($countryCode && $countryCode !== 'Unknown') ? Brand::where('country_code', $countryCode)->orderBy('rating', 'desc')->get()
+            : Brand::orderBy('rating', 'desc')->get();
         return response()->json($brands);
     }
 
@@ -30,7 +31,6 @@ class BrandController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'brand_name' => 'bail|required|string',
-            // 'brand_image' => 'bail|nullable|string',
             'brand_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'rating' => 'bail|integer|min:0|max:5',
             'description' => 'min:0'
@@ -46,6 +46,7 @@ class BrandController extends Controller
         $brand = new Brand();
         $brand->brand_name = $request->brand_name;
         $brand->brand_image = $request->brand_image;
+        $brand->countryCode = $request->countryCode;
         $brand->rating = $request->rating ?? 0;
         $brand->save();
 
@@ -87,10 +88,9 @@ class BrandController extends Controller
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);
         }
-        
+
         $imagePath = $request->file('brand_image')->store('brand_images', 'public');
         $brand->brand_image = url('/storage/' . $imagePath);
-        
         $brand->update($request->all());
         return response()->json($brand, 200);
 

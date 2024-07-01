@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\BrandController;
+use App\Http\Controllers\API\AuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -19,4 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('brands',BrandController::class);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::middleware('auth:sanctum')->group(
+    function () {
+        Route::apiResource('brands', BrandController::class);
+    }
+);
+
