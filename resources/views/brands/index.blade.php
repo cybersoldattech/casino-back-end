@@ -81,11 +81,6 @@
 @endsection
 
 <script>
-    // $('.delete-brand-btn').click(function() {
-    //     var url = "{{ route('admin.brands.destroy', ':id') }}";
-    //     url = url.replace(':id', brandId);
-    //     $('#deleteForm').attr('action', url);
-    // });
     function setBrandId(id) {
             if (!id) return;
             document.getElementById('brandID').value = id;
